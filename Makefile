@@ -455,8 +455,6 @@ initialize_rgb30:
 	@echo " - created $(PROJECT_NAME) directory in ports/"
 	@sshpass -p $${RGB30_SSH_PASSWORD} scp resources/$(PROJECT_NAME).sh root@$${RGB30_SSH_LOCAL_IP}:/roms/ports/$(PROJECT_NAME)/$(PROJECT_NAME).sh
 	@echo " - copied $(PROJECT_NAME).sh launch script to ports/$(PROJECT_NAME)/"
-	@sshpass -p $${RGB30_SSH_PASSWORD} ssh root@$${RGB30_SSH_LOCAL_IP} "sed -i '/<\\/gameList>/i <game><path>/roms/ports/$(PROJECT_NAME)/$(PROJECT_NAME).sh</path><name>$(PROJECT_NAME)</name><desc>$(PROJECT_NAME)</desc></game>' /roms/ports/gamelist.xml"
-	@echo " - added $(PROJECT_NAME) to ports/gamelist.xml"
 	@echo "RGB30 initialization completed successfully!\n"
 	@echo "Refresh your game list on the RGB30 to see $(PROJECT_NAME)"
 	@echo "Start > Game Settings > Update Gamelists > Yes"
