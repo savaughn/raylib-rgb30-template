@@ -2,6 +2,8 @@
 
 This is a template project for creating games with [raylib](https://www.github.com/raysan5/raylib) on the Powkiddy RGB30 Linux arm64 handheld.
 
+![screenshot000](https://github.com/savaughn/raylib-rgb30-template/assets/25937456/782759a7-2b84-495b-8aa2-750318e60af0)
+
 ## Setup Linux dev environment
 
 ```bash
@@ -43,3 +45,8 @@ To build and send to device, use:
 ```bash
 make rgb30 send
 ```
+## Custom controller implementation
+
+- When compiled for PLATFORM_DRM, the rcore function, `IsGamepadButtonPressed`, doesn't return true when a button is pressed. Instead use `is_button_pressed` which returns a boolean on button press in conjunction with `update_button_state` before draw and `refresh_button_state` after draw. These functions emulate the raylib core implementation.
+
+- The default value from raylib, `GAMEPAD_BUTTON_UNKNOWN = 0`, conflicts with the RGB30's keyinput values where RIGHT_FACE_DOWN ("B") reports as 0. The enum `rgb30_buttons` arranges the buttons by the keyinput value reported on the device.
