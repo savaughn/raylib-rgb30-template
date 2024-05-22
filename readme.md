@@ -1,6 +1,6 @@
 # Raylib Game Template for Powkiddy RGB30
 
-This is a template project for creating games with [raylib](https://www.github.com/raysan5/raylib) on the Powkiddy RGB30 Linux arm64 handheld using an arm64 Linux development machine. While cross-compiling is possible, it's outside the scope of this template.
+This is a template project for creating games with [raylib](https://www.github.com/raysan5/raylib) on the Powkiddy RGB30 Linux arm64 handheld running JELOS using an arm64 Linux development machine. While cross-compiling is possible, it's outside the scope of this template.
 
 ![screenshot000](https://github.com/savaughn/raylib-rgb30-template/assets/25937456/782759a7-2b84-495b-8aa2-750318e60af0)
 
@@ -51,6 +51,8 @@ make rgb30 send
 
 - The default value from raylib, `GAMEPAD_BUTTON_UNKNOWN = 0`, conflicts with the RGB30's keyinput values where RIGHT_FACE_DOWN ("B") reports as 0. The enum `rgb30_buttons` arranges the buttons by the keyinput value reported on the device.
 
+## Known Issues
+- Does not work on Rocknix due to graphics driver changes. I have to investigate further to determine the cause.
+
 ## Working Example
 ### [savaughn/vertical30](https://github.com/savaughn/vertical30)
-![screenshot000](https://private-user-images.githubusercontent.com/25937456/289339814-4cc35396-cd2d-4994-8c80-a20ece702862.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDYyMzUzMzksIm5iZiI6MTcwNjIzNTAzOSwicGF0aCI6Ii8yNTkzNzQ1Ni8yODkzMzk4MTQtNGNjMzUzOTYtY2QyZC00OTk0LThjODAtYTIwZWNlNzAyODYyLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTI2VDAyMTAzOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPThkZjgxODFjNzk4ODg2MmMyNGRmNzExMzExNjlmNTkyNGUyMjRkODNmMjI0MmI4N2MxMThlOWFkNWFkZjEyMmYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.uAg3qAUwsO7PRZ5GKT86TMc0R2RbhzeDVz-zpt5QmJc)
